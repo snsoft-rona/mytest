@@ -38,11 +38,11 @@
 
     <script>
       document.querySelectorAll("input, textarea").forEach((input) => {
-        document.body.style.paddingBottom = "300px"; // Adjust as needed
         input.addEventListener("focus", () => {
-          setTimeout(() => {
-            input.scrollIntoView({ behavior: "smooth", block: "end" });
-          }, 300);
+          document.body.style.paddingBottom = "300px"; // Adjust as needed
+
+          console.log(document.body.scrollHeight);
+          window.scrollTo(0, document.body.scrollHeight);
 
           if ("virtualKeyboard" in navigator) {
             navigator.virtualKeyboard.overlaysContent = true;
