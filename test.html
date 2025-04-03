@@ -41,8 +41,10 @@
         input.addEventListener("focus", () => {
           document.body.style.paddingBottom = "300px"; // Adjust as needed
 
-          //   alert(document.body.scrollHeight);
-          //   window.scrollTo(0, document.body.scrollHeight);
+          setTimeout(() => {
+            alert(document.body.scrollHeight);
+            window.scrollTo(0, document.body.scrollHeight);
+          }, 1000);
 
           //   if ("virtualKeyboard" in navigator) {
           //     navigator.virtualKeyboard.overlaysContent = true;
