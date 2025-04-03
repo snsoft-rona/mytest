@@ -41,12 +41,12 @@
         input.addEventListener("focus", () => {
           document.body.style.paddingBottom = "300px"; // Adjust as needed
 
-          console.log(document.body.scrollHeight);
-          window.scrollTo(0, document.body.scrollHeight);
+          //   alert(document.body.scrollHeight);
+          //   window.scrollTo(0, document.body.scrollHeight);
 
-          if ("virtualKeyboard" in navigator) {
-            navigator.virtualKeyboard.overlaysContent = true;
-          }
+          //   if ("virtualKeyboard" in navigator) {
+          //     navigator.virtualKeyboard.overlaysContent = true;
+          //   }
         });
 
         input.addEventListener("focusout", () => {
