@@ -37,15 +37,22 @@
     </div>
 
     <script>
-      document.addEventListener("focusin", () => {
-        // Keyboard is open, adjust layout
+      document.querySelectorAll("input, textarea").forEach((input) => {
         document.body.style.paddingBottom = "300px"; // Adjust as needed
-        window.scrollTo(0, document.body.scrollHeight);
-      });
+        input.addEventListener("focus", () => {
+          setTimeout(() => {
+            input.scrollIntoView({ behavior: "smooth", block: "end" });
+          }, 300);
 
-      document.addEventListener("focusout", () => {
-        // Keyboard is closed, reset layout
-        document.body.style.paddingBottom = "0px";
+          if ("virtualKeyboard" in navigator) {
+            navigator.virtualKeyboard.overlaysContent = true;
+          }
+        });
+
+        input.addEventListener("focusout", () => {
+          // Keyboard is closed, reset layout
+          document.body.style.paddingBottom = "0px";
+        });
       });
     </script>
   </body>
